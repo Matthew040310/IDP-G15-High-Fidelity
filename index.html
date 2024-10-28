@@ -14,6 +14,16 @@
         width: 50px;
         padding-bottom: 5px;
     }
+
+    .sectionicon {
+        width: 25px;
+        height: 25px;
+    }
+
+    .warningicon{
+        width: 35px;
+        height: 35px;
+    }
 </style>
 
 <body>
@@ -63,9 +73,23 @@
                         <div class="col-sm-4 border-start">
                             <h4 class="text-center">Section & Class Timings</h4>
                             <ul>
-                                <a href="#" class="text-decoration-none text-dark"><li class="border-bottom">G1: Mon, 12:00 - 15:15 <img src="img/benchicon.png" alt="Add to Bench" style="width: 25px; height: 25px;" class="ms-2 my-2"></li></a>
-                                <a href="#" class="text-decoration-none text-dark"><li class="border-bottom">G2: Mon, 15:00 - 18:45 <img src="img/benchicon.png" alt="Add to Bench" style="width: 25px; height: 25px;" class="ms-2 my-2"></li></a>
-                                <a href="#" class="text-decoration-none text-dark"><li>G3: Tues, 19:00 - 22:15 <img src="img/benchicon.png" alt="Add to Bench" style="width: 25px; height: 25px;" class="ms-2 my-2"></li></a>
+                                <a href="#" class="text-decoration-none text-dark">
+                                    <li class="border-bottom">G1: Mon, 12:00 - 15:15
+                                        <img src="img/benchicon.png" title="Add to Bench" class="sectionicon ms-2 my-2">
+                                        <!-- Warning Icon -->
+                                        <img src="img/warningicon.png" title="Conflicts with current timetable" class="warningicon ms-2">
+                                    </li>
+                                </a>
+                                <a href="#" class="text-decoration-none text-dark">
+                                    <li class="border-bottom">G2: Mon, 15:00 - 18:45
+                                        <img src="img/benchicon.png" title="Add to Bench" class="sectionicon ms-2 my-2">
+                                    </li>
+                                </a>
+                                <a href="#" class="text-decoration-none text-dark">
+                                    <li>G3: Tues, 19:00 - 22:15
+                                        <img src="img/benchicon.png" title="Add to Bench" class="sectionicon ms-2 my-2">
+                                    </li>
+                                </a>
                             </ul>
                         </div>
                     </div>
@@ -163,7 +187,7 @@
             </div>
 
             <!-- Related Professors Section -->
-            <div class="col-lg-2 sticky-top text-center" >
+            <div class="col-lg-2 sticky-top text-center">
                 <h4>Other Professors Teaching This Course:</h4>
                 <!-- Professor Card -->
                 <div class="card text-center my-2">
