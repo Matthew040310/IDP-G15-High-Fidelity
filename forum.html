@@ -43,16 +43,16 @@
         margin-bottom: 20px;
     }
 
-    .exit{
+    .exit {
         font-size: medium;
         padding-left: 10px;
         padding-right: 10px;
         font-family: Arial, Helvetica, sans-serif;
     }
 
-    .star{
-        max-height: 20px;
-        max-width: 20px;
+    .star {
+        max-height: 25px;
+        max-width: 25px;
         object-fit: cover;
     }
 </style>
@@ -122,11 +122,11 @@
                                 <div class="list-group list-group-flush" id="favorites">
                                     <!-- Favorited posts will be added here -->
                                     <div class="card">
-                                        <div class="card-body fw-bold">
-                                            <img src="img/favourite3.png" alt="favourite" class="star">
-                                            Taking CS103 in Y1S1 - Joey Tan 
+                                        <div class="card-body fw-bold d-flex flex-row">
+                                            <img src="img/favourite3.png" alt="favourite" class="star me-2">
+                                            Taking CS103 in Y1S1 - Joey Tan
                                         </div>
-                                      </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -136,32 +136,55 @@
                             <div id="forumPage">
                                 <!-- Header with Create Post Button -->
                                 <div class="d-flex justify-content-between align-items-center mb-4">
-                                  
+
                                     <button class="btn btn-primary" data-bs-toggle="modal"
                                         data-bs-target="#createPostModal">
                                         <i class="fas fa-plus me-2"></i>Create Post
                                     </button>
-                                    <button class="exit">
-                                        ← Back to Professor Profile Page
+                                    <button class="btn btn-secondary">
+                                        ← Return to Professor Profile Page
                                     </button>
                                 </div>
 
+                                <!-- Headers -->
+                                <div class="row mb-1">
+                                    <h5 class="col-md-4"></h5>
+                                    <h5 class="col-md-2">Categories</h5>
+                                    <h5 class="col-md-2">Professors</h5>
+                                    <h5 class="col-md-2">Courses</h5>
+                                    <h5 class="col-md-2">Filter By</h5>
+                                </div>
                                 <!-- Search and Filters -->
-                                <div class="row mb-4">
+                                <div class="row mb-2">
                                     <div class="col-md-4">
-                                        <input type="text" class="form-control form-control-sm" id="searchInput"
-                                            placeholder="Search forums...">
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" placeholder="Search forums...">
+                                            <button class="btn btn-outline-success">Search</button>
+                                        </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <select class="form-select form-select-sm" id="categoryFilter">
+                                    <div class="col-md-2">
+                                        <select class="form-select form-select-md" id="categoryFilter">
                                             <option value="all">All Categories</option>
                                             <option value="professor">Professor</option>
                                             <option value="question">Question</option>
                                             <option value="course">Course</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-4">
-                                        <select class="form-select form-select-sm" id="sortBy">
+                                    <div class="col-md-2">
+                                        <select class="form-select form-select-md" id="categoryFilter">
+                                            <option value="all">All Professors</option>
+                                            <option value="manoj" selected>Manoj Thulasidas</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <select class="form-select form-select-md" id="categoryFilter">
+                                            <option value="all">All Courses</option>
+                                            <option value="CS103" selected>CS103</option>
+                                            <option value="IS113">IS113</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <select class="form-select form-select-md" id="sortBy">
                                             <option value="newest">Newest First</option>
                                             <option value="popular">Most Popular</option>
                                             <option value="commented">Most Commented</option>
@@ -175,6 +198,45 @@
                                     No forums found matching your search criteria
                                 </div>
 
+                                <!-- Professor Rating Container -->
+                                <div class="container-fluid " id="professorRating">
+                                    <div class="row mb-3 align-middle">
+                                        <div class="col-sm-2 text-center">
+                                            <img src="img/manojt.jpg" class="object-fit-cover mt-2"
+                                                style="width: 200px; height: 200px;">
+                                        </div>
+                                        <div class="col">
+                                            <div class="my-3 ms-5 ps-3">
+                                                <h3 class="mb-3">Professor Manoj Thulasidas</h3>
+                                                <h4>Forum Score: ⭐⭐⭐⭐⭐</h4>
+                                            </div>
+                                            <div class="row justify-content-between fw-bolder text-center align-items-center mt-5">
+                                                <div class="col border-end" style="color: rgb(209, 25, 209);">
+                                                    Engaging
+                                                    <p>76%</p>
+                                                </div>
+                                                <div class="col border-end" style="color: violet;">
+                                                    Fair Grading
+                                                    <p>86%</p>
+                                                </div>
+                                                <div class="col border-end" style="color: rgb(255, 123, 145);">
+                                                    Knowledgable
+                                                    <p>93%</p>
+                                                </div>
+                                                <div class="col border-end" style="color: orange;">
+                                                    Effective Teaching
+                                                    <p>86%</p>
+                                                </div>
+                                                <div class="col" style="color: rgb(21, 193, 21);">
+                                                    Manageable Workload
+                                                    <p>76%</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+
                                 <!-- Posts Container -->
                                 <div id="postsContainer">
                                     <!-- Posts will be dynamically inserted here -->
@@ -184,7 +246,7 @@
                             <!-- Post Detail Page -->
                             <div id="postDetailPage" style="display: none;">
                                 <div class="mb-4">
-                                    <button class="btn btn-outline-secondary" onclick="showForumPage()">
+                                    <button class="btn btn-secondary" onclick="showForumPage()">
                                         <i class="fas fa-arrow-left me-2"></i>Back to Forum
                                     </button>
                                 </div>
@@ -247,7 +309,7 @@
                 id: 1,
                 title: "Taking CS103 in Y1S1",
                 favourite: "img/favourite3.png",
-                category: "course",
+                category: "Course",
                 content: "I think this is one of the harder mods for comp sci students in Y1S1. It is quite difficult to get everything taught even during finals. Our final paper is quite decent, but that's after some killer quizzes and mid-term (I'm guessing that they probably made the finals easier for us after the initial tough tests, but I'm not sure about future batches - maybe they will average out the difficulty levels across all the tests for yall). Anyway, I would say not to worry about getting excellent grades for this mod because if you put in the necessary effort (tho prob more than other mods), getting an A- should still be achievable. It is an important mod especially for comp science students too. You can watch Gilbert Strang's videos on YouTube if you don't get anything too lol.",
                 author: "Joey Tan",
                 timestamp: "2 hours ago",
@@ -262,7 +324,7 @@
                 id: 2,
                 title: "My experience with Professor Manoj Thulasidas for CS103",
                 favourite: "img/nonfavourite.jpg",
-                category: "professor",
+                category: "Professor",
                 content: "I had Prof Manoj for Linear Algebra, and I understand that the content is really dry and difficult to teach. Despite this, I can tell that he really cares and tries his best to engage us. The assignments were very manageable, and he provided many opportunities for us to participate in class discussion.",
                 author: "Leroy Lim",
                 timestamp: "5 hours ago",
@@ -285,7 +347,7 @@
                                 <img src="${post.image}" class="img-fluid rounded" alt="Post image">
                             </div>
                             <div class="col-md-9">
-                                <h5 class="card-title">${post.title} <span><img src="${post.favourite}" class="img-fluid rounded star" alt="Post image"></span></h5>
+                                <h5 class="card-title">${post.title} <span><img src="${post.favourite}" class="img-fluid rounded star mb-2" alt="Post image"></span></h5>
                                 <h6 class="card-subtitle mb-2 text-muted">
                                     <span class="badge bg-secondary">${post.category}</span>
                                     · Posted by ${post.author} · ${post.timestamp}
@@ -389,7 +451,7 @@
             });
 
             document.getElementById('noResults').style.display =
-            filteredPosts.length === 0 ? 'block' : 'none';
+                filteredPosts.length === 0 ? 'block' : 'none';
 
             renderPosts(filteredPosts);
         }
@@ -418,7 +480,7 @@
             e.target.reset();
         });
 
-      
+
 
         // Add event listeners for filters
         document.getElementById('categoryFilter').addEventListener('change', filterAndSortPosts);
